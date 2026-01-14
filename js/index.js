@@ -18,6 +18,11 @@ $(function(){
   $('.menu_icon').click(function(){
     $('#menu_wrap').animate({right:0},400);
   });
+
+  // 메뉴 숨김
+  $('#menu_wrap').mouseleave(function(){
+    $('#menu_wrap').animate({right:'-60%'},400);
+  });
   $('.menu_close').click(function(){
     $('#menu_wrap').animate({right:'-60%'},400);
   });
@@ -37,8 +42,9 @@ $(function(){
     //top_btn
     // 초기설정
     $('.top_btn').hide();
-    //이벤트 = > scroll 이벤트 대상(window)
-    $(window).scroll(function(){
+    // 세로 스크롤바 숨김
+    //이벤트 = > scroll 이벤트 대상 변경(body)
+    $('body').scroll(function(){
       // 스크롤 높이 + 화면 높이
       let sc_num = $(this).scrollTop();
       let h_num =$(this).height();
